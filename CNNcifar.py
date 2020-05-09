@@ -2,6 +2,7 @@ import tensorflow as tf
 from tensorflow.keras import datasets, layers, models
 import matplotlib.pyplot as plt
 from SimpleCnn import CNN
+import numpy as np
 
 (train_images, train_labels), (test_images, test_labels) = datasets.cifar10.load_data()
 
@@ -22,7 +23,7 @@ for i in range(25):
 plt.show()
 
 # Create an instance of the model
-model = CNN()
+model = CNN(class_len=len(class_names), input_shape=(32, 32, 3))
 model.build(input_shape=(1, 32, 32, 3))
 model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
