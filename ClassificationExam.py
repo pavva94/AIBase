@@ -54,7 +54,7 @@ max_depth = dtc.tree_.max_depth
 print(max_depth)
 ptest = dtc.predict(Xtest)
 print(accuracy_score(ytest, ptest))
-plot_tree(dtc);
+plot_tree(dtc)
 
 avg_scores = []
 for i in range(1, max_depth+1):
