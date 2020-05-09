@@ -1,7 +1,7 @@
 # Based on: https://www.tensorflow.org/tutorials/images/cnn
 
 import tensorflow as tf
-from tensorflow.keras import datasets, layers, models
+from tensorflow.keras import datasets
 import matplotlib.pyplot as plt
 from SimpleCnn import CNN
 import numpy as np

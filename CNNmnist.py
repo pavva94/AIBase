@@ -2,7 +2,7 @@
 
 import tensorflow as tf
 import numpy as np
-from tensorflow.keras import datasets, layers, models
+from tensorflow.keras import datasets
 import matplotlib.pyplot as plt
 from SimpleCnn import CNN
 
