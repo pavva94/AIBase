@@ -1,3 +1,5 @@
+# Based on: https://www.tensorflow.org/tutorials/images/cnn
+
 import tensorflow as tf
 from tensorflow.keras import datasets, layers, models
 import matplotlib.pyplot as plt

@@ -1,3 +1,5 @@
+# Based on: https://www.tensorflow.org/tutorials/images/cnn
+
 import tensorflow as tf
 import numpy as np
 from tensorflow.keras import datasets, layers, models

@@ -1,3 +1,4 @@
+# Based on: https://www.tensorflow.org/tutorials/text/text_generation
 import tensorflow as tf
 import numpy as np
 import os
