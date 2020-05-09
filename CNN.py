@@ -1,7 +1,7 @@
 import tensorflow as tf
-
 from tensorflow.keras import datasets, layers, models
 import matplotlib.pyplot as plt
+from SimpleCnn import CNN
 
 (train_images, train_labels), (test_images, test_labels) = datasets.cifar10.load_data()
 
@@ -20,41 +20,6 @@ for i in range(25):
     # which is why you need the extra index
     plt.xlabel(class_names[train_labels[i][0]])
 plt.show()
-
-
-# model = models.Sequential()
-# model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)))
-# model.add(layers.MaxPooling2D((2, 2)))
-# model.add(layers.Conv2D(64, (3, 3), activation='relu'))
-# model.add(layers.MaxPooling2D((2, 2)))
-# model.add(layers.Conv2D(64, (3, 3), activation='relu'))
-# model.add(layers.Flatten())
-# model.add(layers.Dense(64, activation='relu'))
-# model.add(layers.Dense(10))
-
-
-class CNN(models.Model):
-  def __init__(self):
-    super(CNN, self).__init__()
-    self.conv1 = layers.Conv2D(32, 3, activation='relu', input_shape=(32, 32, 3))
-    self.conv2 = layers.Conv2D(64, 3, activation='relu')
-    self.conv3 = layers.Conv2D(128, 3, activation='relu')
-    self.flatten = layers.Flatten()
-    self.d1 = layers.Dense(128, activation='relu')
-    self.d2 = layers.Dense(len(class_names))
-    self.pool1 = layers.MaxPooling2D((2, 2))
-    self.pool2 = layers.MaxPooling2D((2, 2))
-
-  def call(self, x, **kwargs):
-    x = self.conv1(x)
-    x = self.pool1(x)
-    x = self.conv2(x)
-    x = self.pool2(x)
-    x = self.conv3(x)
-    x = self.flatten(x)
-    x = self.d1(x)
-    return self.d2(x)
-
 
 # Create an instance of the model
 model = CNN()
