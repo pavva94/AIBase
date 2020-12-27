@@ -59,7 +59,7 @@ from plot_silhouette import plot_silhouette  # python script provided separately
 #txt = np.loadtxt('winequality-red.csv', delimiter=';')
 #df = pd.DataFrame(txt)
 
-df = pd.read_csv('winequality-red.csv', sep=';')
+df = pd.read_csv('files/winequality-red.csv', sep=';')
 
 dataset = datasets.load_wine()
 X = dataset.data
